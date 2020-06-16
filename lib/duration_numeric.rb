@@ -4,26 +4,26 @@ class Numeric
   def milliseconds
     return Duration.new(self, units: Duration::MILLISECONDS)
   end
-  alias :millisecond :milliseconds
-  alias :ms :milliseconds
+  alias millisecond milliseconds
+  alias ms milliseconds
 
   def seconds
     return Duration.new(self, units: Duration::SECONDS)
   end
-  alias :second :seconds
+  alias second seconds
 
   def minutes
     return Duration.new(self, units: Duration::MINUTES)
   end
-  alias :minute :minutes
+  alias minute minutes
 
   def hours
     return Duration.new(self, units: Duration::HOURS)
   end
-  alias :hour :hours
+  alias hour hours
 
   def days
     return Duration.new(self, units: Duration::DAYS)
   end
-  alias :day :days
+  alias day days
 end
