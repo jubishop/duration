@@ -4,9 +4,10 @@ Ruby class representing a duration in time.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
 ```ruby
+gem 'core', github: 'jubishop/core'
 gem 'duration', github: 'jubishop/duration'
 ```
 
