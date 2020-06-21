@@ -52,22 +52,40 @@ class Duration
   end
 
   def +(other)
-    unless other.is_a?(Duration)
-      raise ArgumentError, "#{other} is not a Duration"
+    if other.is_a?(Duration)
+      return Duration.new(milliseconds + other.milliseconds,
+                          units: MILLISECONDS)
     end
 
-    return Duration.new(milliseconds + other.milliseconds, units: MILLISECONDS)
+    super(other)
   end
 
   def -(other)
-    unless other.class == Duration
-      raise ArgumentError, "#{other} is not a Duration"
-    end
-    if other.milliseconds > milliseconds
-      raise RangeError, "#{other} is so large the result would be negative"
+    if other.is_a?(Duration)
+      if other.milliseconds > milliseconds
+        raise RangeError, "#{other} is so large the result would be negative"
+      end
+      return Duration.new(milliseconds - other.milliseconds,
+                          units: MILLISECONDS)
     end
 
-    return Duration.new(milliseconds - other.milliseconds, units: MILLISECONDS)
+    super(other)
+  end
+
+  def *(other)
+    if other.is_a?(Numeric)
+      return Duration.new(milliseconds * other, units: MILLISECONDS)
+    end
+
+    super(other)
+  end
+
+  def /(other)
+    if other.is_a?(Numeric)
+      return Duration.new(milliseconds / other, units: MILLISECONDS)
+    end
+
+    super(other)
   end
 
   def format(precision = SECONDS)
