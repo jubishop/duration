@@ -46,6 +46,7 @@ class Duration
   def milliseconds
     @milliseconds.to_i
   end
+  alias ms milliseconds
 
   def <=>(other)
     milliseconds <=> other.milliseconds
@@ -53,8 +54,7 @@ class Duration
 
   def +(other)
     if other.is_a?(Duration)
-      return Duration.new(milliseconds + other.milliseconds,
-                          units: MILLISECONDS)
+      return Duration.new(ms + other.ms, units: MILLISECONDS)
     end
 
     super(other)
@@ -62,12 +62,7 @@ class Duration
 
   def -(other)
     if other.is_a?(Duration)
-      if other.milliseconds > milliseconds
-        raise RangeError, "#{other} is so large the result would be negative"
-      end
-
-      return Duration.new(milliseconds - other.milliseconds,
-                          units: MILLISECONDS)
+      return Duration.new(ms - other.ms, units: MILLISECONDS)
     end
 
     super(other)
