@@ -65,6 +65,7 @@ class Duration
       if other.milliseconds > milliseconds
         raise RangeError, "#{other} is so large the result would be negative"
       end
+
       return Duration.new(milliseconds - other.milliseconds,
                           units: MILLISECONDS)
     end
