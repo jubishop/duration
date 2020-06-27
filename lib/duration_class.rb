@@ -35,18 +35,35 @@ class Duration
     (milliseconds / HOURS).to_i
   end
 
+  def hours!
+    hours % (DAYS / HOURS)
+  end
+
   def minutes
     (milliseconds / MINUTES).to_i
+  end
+
+  def minutes!
+    minutes % (HOURS / MINUTES)
   end
 
   def seconds
     (milliseconds / SECONDS).to_i
   end
 
+  def seconds!
+    seconds % (MINUTES / SECONDS)
+  end
+
   def milliseconds
     @milliseconds.to_i
   end
   alias ms milliseconds
+
+  def milliseconds!
+    milliseconds % (SECONDS / MILLISECONDS)
+  end
+  alias ms! milliseconds!
 
   def <=>(other)
     milliseconds <=> other.milliseconds
@@ -95,7 +112,7 @@ class Duration
       remaining -= value * amount
       "#{value} #{name.pluralize(value)}"
     }
-    parts.push(TIME_NAMES.fetch(precision).pluralize(0)) if parts.empty?
+    parts.push("0 #{TIME_NAMES.fetch(precision).pluralize(0)}") if parts.empty?
     return parts.sentence
   end
   alias to_s format
