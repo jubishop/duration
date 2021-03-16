@@ -1,10 +1,12 @@
 interface _TimeDurationExtensions
-  def -: (Duration | Numeric other) -> Time
+  def -: (Numeric other) -> Time
        | (Time other) -> Float
-  def +: (Duration | Numeric other) -> Time
+  def +: (Numeric other) -> Time
 end
 
 module TimeDurationExtensions : _TimeDurationExtensions
+  def -: (Duration other) -> Time
+  def +: (Duration other) -> Time
 end
 
 class Time
