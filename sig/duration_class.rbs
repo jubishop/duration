@@ -1,0 +1,38 @@
+type number = Float | Rational | Integer
+
+class Duration
+  include Comparable
+
+  MILLISECONDS: Integer
+  SECONDS: Integer
+  MINUTES: Integer
+  HOURS: Integer
+  DAYS: Integer
+
+  TIME_NAMES: Hash[Integer, String]
+
+  def initialize: (number amount, ?units: Integer units) -> Duration
+
+  def days: () -> Integer
+  def hours: () -> Integer
+  def hours!: () -> Integer
+  def minutes: () -> Integer
+  def minutes!: () -> Integer
+  def seconds: () -> Integer
+  def seconds!: () -> Integer
+  def milliseconds: () -> Integer
+  alias ms milliseconds
+  def milliseconds!: () -> Integer
+  alias ms! milliseconds!
+
+  def <=>: (Duration other) -> Integer
+  def +: (Duration other) -> Duration
+  def -: (Duration other) -> Duration
+  # TODO: Type these as number's
+  def *: (number other) -> Duration
+  def /: (number other) -> Duration
+
+  def format: (?Integer precision) -> String
+
+  alias to_s format
+end

@@ -5,7 +5,7 @@ require_relative 'duration_class'
 module TimeDurationExtensions
   def -(other)
     if other.is_a?(Duration)
-      return self - Rational(other.milliseconds / Duration::SECONDS)
+      return super(Rational(other.milliseconds / Duration::SECONDS))
     end
 
     super(other)
@@ -13,7 +13,7 @@ module TimeDurationExtensions
 
   def +(other)
     if other.is_a?(Duration)
-      return self + Rational(other.milliseconds / Duration::SECONDS)
+      return super(Rational(other.milliseconds / Duration::SECONDS))
     end
 
     super(other)

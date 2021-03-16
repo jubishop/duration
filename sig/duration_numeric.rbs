@@ -1,0 +1,29 @@
+module NumericExtensions
+  def milliseconds: () -> Duration
+  alias millisecond milliseconds
+  alias ms milliseconds
+
+  def seconds: () -> Duration
+  alias second seconds
+
+  def minutes: () -> Duration
+  alias minute minutes
+
+  def hours: () -> Duration
+  alias hour hours
+
+  def days: () -> Duration
+  alias day days
+end
+
+class Float < Numeric
+  include NumericExtensions
+end
+
+class Rational < Numeric
+  include NumericExtensions
+end
+
+class Integer < Numeric
+  include NumericExtensions
+end
