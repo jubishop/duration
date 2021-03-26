@@ -4,8 +4,6 @@ Ruby class representing a duration in time.
 
 ## Installation
 
-## Installation
-
 ### Global installation
 
 ```zsh
