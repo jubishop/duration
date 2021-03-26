@@ -13,24 +13,19 @@ class Duration
 
   def initialize: (number amount, ?units: Integer units) -> Duration
 
-  def days: () -> Integer
-  def hours: () -> Integer
-  def hours!: () -> Integer
-  def minutes: () -> Integer
-  def minutes!: () -> Integer
-  def seconds: () -> Integer
-  def seconds!: () -> Integer
-  def milliseconds: () -> Integer
+  def days: () -> Rational
+  def hours: () -> Rational
+  def minutes: () -> Rational
+  def seconds: () -> Rational
+  def milliseconds: () -> Rational
   alias ms milliseconds
-  def milliseconds!: () -> Integer
-  alias ms! milliseconds!
 
   def <=>: (Duration other) -> Integer
   def +: (Duration other) -> Duration
   def -: (Duration other) -> Duration
   def *: (number other) -> Duration
   def /: (number other) -> Duration
-       | (Duration other) -> number
+       | (Duration other) -> Rational
   def %: (Duration other) -> Duration
 
   def format: (?Integer precision) -> String

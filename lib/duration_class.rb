@@ -29,42 +29,23 @@ class Duration
   end
 
   def days
-    (milliseconds / DAYS).to_i
+    (milliseconds / DAYS)
   end
 
   def hours
-    (milliseconds / HOURS).to_i
-  end
-
-  def hours!
-    hours % (DAYS / HOURS)
+    (milliseconds / HOURS)
   end
 
   def minutes
-    (milliseconds / MINUTES).to_i
-  end
-
-  def minutes!
-    minutes % (HOURS / MINUTES)
+    (milliseconds / MINUTES)
   end
 
   def seconds
-    (milliseconds / SECONDS).to_i
+    (milliseconds / SECONDS)
   end
 
-  def seconds!
-    seconds % (MINUTES / SECONDS)
-  end
-
-  def milliseconds
-    @milliseconds.to_i
-  end
+  attr_reader :milliseconds
   alias ms milliseconds
-
-  def milliseconds!
-    milliseconds % (SECONDS / MILLISECONDS)
-  end
-  alias ms! milliseconds!
 
   def <=>(other)
     ms <=> other.ms
@@ -92,7 +73,7 @@ class Duration
     return Duration.new(ms % other.ms, units:MILLISECONDS)
   end
 
-  def format(precision = SECONDS)
+  def format(precision: SECONDS)
     remaining = milliseconds
     parts = TIME_NAMES.filter_map { |amount, name|
       next unless amount >= precision

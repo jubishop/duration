@@ -39,20 +39,18 @@ gem 'duration', source: 'https://www.jubigems.org/'
 28.hours % 1.day # 4.hours
 ```
 
-### Integer Amounts and Remainders
+### Amounts
 
 ```ruby
 duration = 90.minutes
 duration.days # 0
-duration.hours # 1
+duration.hours # 1.5
 duration.minutes # 90
-duration.minutes! # 30
 duration.seconds # 5400
 
 duration = 28.hours
-duration.days # 1
+duration.days # (7/6)
 duration.hours # 28
-duration.hours! # 4
 duration.minutes # 1680
 ```
 
@@ -67,9 +65,15 @@ Time.now - 7.days # One week ago
 ### Printing Durations
 
 ```ruby
-1212342.seconds.to_s # "14 days, 45 minutes and 42 seconds"
-1212342.seconds.format(Duration::DAYS) # "14 days"
+1218234.seconds.to_s # "14 days, 2 hours, 23 minutes and 54 seconds"
+1218234.seconds.format(precision: Duration::MINUTES) # "14 days, 2 hours and 23 minutes"
+1218234.seconds.format(precision: Duration::HOURS) # "14 days and 2 hours"
+1218234.seconds.format(precision: Duration::DAYS) # "14 days"
 ```
+
+### RBS
+
+`duration` comes with [complete `.rbs` definitions](https://github.com/jubishop/duration/tree/master/sig) for the main `Duration` class and the additions to the `DateTime`, `Time`, and `Numeric` classes.
 
 ## License
 
