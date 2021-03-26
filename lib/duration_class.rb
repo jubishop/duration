@@ -3,7 +3,6 @@ require 'core'
 class Duration
   include Comparable
 
-  # TODO: Use real duration units.
   MILLISECONDS = 1
   SECONDS = MILLISECONDS * 1000
   MINUTES = SECONDS * 60
@@ -70,7 +69,7 @@ class Duration
   end
 
   def %(other)
-    return Duration.new(ms % other.ms, units:MILLISECONDS)
+    return Duration.new(ms % other.ms, units: MILLISECONDS)
   end
 
   def format(precision: SECONDS)
