@@ -67,7 +67,7 @@ class Duration
   alias ms! milliseconds!
 
   def <=>(other)
-    milliseconds <=> other.milliseconds
+    ms <=> other.ms
   end
 
   def +(other)
@@ -79,11 +79,17 @@ class Duration
   end
 
   def *(other)
-    return Duration.new(milliseconds * other, units: MILLISECONDS)
+    return Duration.new(ms * other, units: MILLISECONDS)
   end
 
   def /(other)
-    return Duration.new(milliseconds / other, units: MILLISECONDS)
+    return ms / other.ms if other.is_a?(Duration)
+
+    return Duration.new(ms / other, units: MILLISECONDS)
+  end
+
+  def %(other)
+    return Duration.new(ms % other.ms, units:MILLISECONDS)
   end
 
   def format(precision = SECONDS)

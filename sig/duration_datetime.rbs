@@ -1,9 +1,6 @@
-interface _DateTimeDurationExtensions
-  def -: (Duration | Numeric | Date other) -> Date
-  def +: (Duration | Numeric | Date other) -> Date
-end
-
-module DateTimeDurationExtensions : _DateTimeDurationExtensions
+module DateTimeDurationExtensions
+  def -: (Duration) -> Date
+  def +: (Duration) -> Date
 end
 
 class DateTime < Date

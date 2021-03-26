@@ -1,8 +1,20 @@
+ruby '>= 3'
+
 source 'https://rubygems.org'
 
-gem 'core', github: 'jubishop/core'
-
+gem 'rake'
+gem 'rbs'
+gem 'rspec'
+gem 'rubocop'
+gem 'rubocop-performance'
+gem 'rubocop-rake'
+gem 'rubocop-rspec'
 gem 'steep'
 
-# Specify your gem's dependencies in core.gemspec
+source 'https://www.jubigems.org' do
+  gem 'core'
+  gem 'rakegem'
+end
+
+# Specify your gem's dependencies in ginit.gemspec
 gemspec

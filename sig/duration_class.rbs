@@ -28,9 +28,10 @@ class Duration
   def <=>: (Duration other) -> Integer
   def +: (Duration other) -> Duration
   def -: (Duration other) -> Duration
-  # TODO: Type these as number's
   def *: (number other) -> Duration
   def /: (number other) -> Duration
+       | (Duration other) -> number
+  def %: (Duration other) -> Duration
 
   def format: (?Integer precision) -> String
 
