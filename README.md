@@ -1,5 +1,7 @@
 # Duration
 
+[![RSpec Status](https://github.com/jubishop/duration/workflows/RSpec/badge.svg)](https://github.com/jubishop/duration/actions)  [![Rubocop Status](https://github.com/jubishop/duration/workflows/Rubocop/badge.svg)](https://github.com/jubishop/duration/actions)
+
 Ruby class representing a duration in time.
 
 ## Installation
