@@ -33,6 +33,7 @@ gem 'duration', source: 'https://www.jubigems.org/'
 ```ruby
 2.days / 1.hour # 48
 90.minutes / 1.hour # 1.5
+500.ms / 1.second # (1/2)
 2.days / 2 # 1.day
 4.hours * 2 # 8.hours
 1.day + 2.days # 3.days
@@ -49,6 +50,7 @@ duration.days # (1/16)
 duration.hours # 1.5
 duration.minutes # 90
 duration.seconds # 5400
+duration.ms # 5400000
 
 duration = 28.hours
 duration.days # (7/6)

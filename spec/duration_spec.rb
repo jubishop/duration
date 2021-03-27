@@ -12,6 +12,7 @@ RSpec.describe(Duration) {
   it('does math') {
     expect(2.days / 1.hour).to(eq(48))
     expect(90.minutes / 1.hour).to(eq(1.5))
+    expect(500.ms / 1.second).to(eq(Rational(1, 2)))
     expect(2.days / 2).to(eq(1.day))
     expect(4.hours * 2).to(eq(8.hours))
     expect(1.day + 2.days).to(eq(3.days))
@@ -25,6 +26,7 @@ RSpec.describe(Duration) {
     expect(90.minutes.hours).to(eq(1.5))
     expect(90.minutes.minutes).to(eq(90))
     expect(90.minutes.seconds).to(eq(5400))
+    expect(90.minutes.ms).to(eq(5400000))
 
     expect(28.hours.days).to(eq((Rational(7, 6))))
     expect(28.hours.hours).to(eq(28))
