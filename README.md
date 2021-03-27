@@ -18,7 +18,7 @@ gem 'duration', source: 'https://www.jubigems.org/'
 
 ## Usage
 
-### Create and Compare Durations
+### Comparisons
 
 ```ruby
 60.minutes == 1.hour # true
@@ -26,7 +26,7 @@ gem 'duration', source: 'https://www.jubigems.org/'
 1.day > 22.hours # true
 ```
 
-### Duration math
+### Math
 
 ```ruby
 2.days / 1.hour # 48
@@ -58,7 +58,7 @@ duration.minutes # 1680
 
 `Duration` objects deal in `Rational` units to maintain absolute precision.  For example, `28.hours.days` is `7/6`, rather than an imprecise `1.1666666666666667`.
 
-### Manipulate Time and DateTime
+### Manipulating Time and DateTime
 
 ```ruby
 Time.new(2002, 10, 31) + 4.days + 30.minutes # 11/04/2002, 12:30am.
@@ -66,7 +66,7 @@ DateTime.new(2001,2,3) + 2.days # 02/05/2001
 Time.new(1993, 2, 24) - 7.days # 02/17/1993
 ```
 
-### Printing Durations
+### Pretty Printing
 
 ```ruby
 1218234.seconds.to_s # '14 days, 2 hours, 23 minutes and 54 seconds'
