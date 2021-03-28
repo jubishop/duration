@@ -1,5 +1,4 @@
 require 'date'
-
 require 'duration'
 
 RSpec.describe(Duration) {
