@@ -1,6 +1,6 @@
 # Duration
 
-[![RSpec Status](https://github.com/jubishop/duration/workflows/RSpec/badge.svg)](https://github.com/jubishop/duration/actions)  [![Rubocop Status](https://github.com/jubishop/duration/workflows/Rubocop/badge.svg)](https://github.com/jubishop/duration/actions)
+[![RSpec Status](https://github.com/jubishop/duration/workflows/RSpec/badge.svg)](https://github.com/jubishop/duration/actions/workflows/rspec.yml)  [![Rubocop Status](https://github.com/jubishop/duration/workflows/Rubocop/badge.svg)](https://github.com/jubishop/duration/actions/workflows/rubocop.yml)
 
 Ruby class representing a duration in time.
 
