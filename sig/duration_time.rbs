@@ -1,6 +1,7 @@
 module TimeDurationExtensions
-  def +: (Duration other) -> Time
-  def -: (Duration other) -> Time
+  def +: (Duration | number other) -> Time
+  def -: (Duration | number other) -> Time
+       | (Time other) -> number
 end
 
 class Time
