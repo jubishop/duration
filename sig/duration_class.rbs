@@ -28,7 +28,7 @@ class Duration
        | (Duration other) -> Rational
   def %: (Duration other) -> Duration
 
-  def format: (?Integer precision) -> String
+  def format: (?precision: Integer) -> String
 
   alias to_s format
 end
