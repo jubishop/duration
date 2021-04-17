@@ -2,6 +2,8 @@ ruby '>= 3'
 
 source 'https://rubygems.org'
 
+gem 'linguistics'
+
 # defaults
 gem 'rake'
 gem 'rbs'

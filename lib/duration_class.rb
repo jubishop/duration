@@ -81,9 +81,9 @@ class Duration
       next unless value.positive?
 
       remaining -= value * amount
-      "#{value} #{name.pluralize(value)}"
+      "#{value} #{name.en.plural(value)}"
     }
-    parts.push("0 #{TIME_NAMES.fetch(precision).pluralize(0)}") if parts.empty?
+    parts.push("0 #{TIME_NAMES.fetch(precision).en.plural(0)}") if parts.empty?
     return parts.sentence
   end
   alias to_s format
