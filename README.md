@@ -6,16 +6,13 @@ Ruby class representing a duration in time.
 
 ## Installation
 
-### Global installation
-
-```zsh
-gem install duration --source https://www.jubigems.org/
-```
-
 ### In a Gemfile
 
 ```ruby
-gem 'duration', source: 'https://www.jubigems.org/'
+source: 'https://www.jubigems.org/' do
+  gem 'core'
+  gem 'duration'
+end
 ```
 
 ## Usage
