@@ -76,6 +76,15 @@ Time.new(1993, 2, 24) - 7.days # 02/17/1993
 1218234.seconds.format(precision: Duration::DAYS) # '14 days'
 ```
 
+#### Pretty Printed Parts
+
+```ruby
+1218234.seconds.format_parts # ['14 days', '2 hours', '23 minutes', '54 seconds']
+1218234.seconds.format_parts(precision: Duration::MINUTES) # ['14 days', '2 hours', '23 minutes']
+1218234.seconds.format_parts(precision: Duration::HOURS) # ['14 days', '2 hours']
+1218234.seconds.format_parts(precision: Duration::DAYS) # ['14 days']
+```
+
 ### RBS
 
 `duration` comes with [complete `.rbs` definitions](https://github.com/jubishop/duration/tree/master/sig) for the main `Duration` class and the additions to the `DateTime`, `Time`, and `Numeric` classes.

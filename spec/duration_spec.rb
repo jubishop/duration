@@ -50,4 +50,15 @@ RSpec.describe(Duration) {
         eq('14 days and 2 hours'))
     expect(1218234.seconds.format(precision: Duration::DAYS)).to(eq('14 days'))
   }
+
+  it('returns formatted parts of a duration') {
+    expect(1218234.seconds.format_parts).to(
+        eq(['14 days', '2 hours', '23 minutes', '54 seconds']))
+    expect(1218234.seconds.format_parts(precision: Duration::MINUTES)).to(
+        eq(['14 days', '2 hours', '23 minutes']))
+    expect(1218234.seconds.format_parts(precision: Duration::HOURS)).to(
+        eq(['14 days', '2 hours']))
+    expect(1218234.seconds.format_parts(precision: Duration::DAYS)).to(
+        eq(['14 days']))
+  }
 }

@@ -72,7 +72,7 @@ class Duration
     return Duration.new(ms % other.ms, units: MILLISECONDS)
   end
 
-  def format(precision: SECONDS)
+  def format_parts(precision: SECONDS)
     remaining = milliseconds
     parts = TIME_NAMES.filter_map { |amount, name|
       next unless amount >= precision
@@ -84,7 +84,11 @@ class Duration
       "#{value} #{name.en.plural(value)}"
     }
     parts.push("0 #{TIME_NAMES.fetch(precision).en.plural(0)}") if parts.empty?
-    return parts.sentence
+    return parts
+  end
+
+  def format(precision: SECONDS)
+    return format_parts(precision: precision).sentence
   end
   alias to_s format
 end

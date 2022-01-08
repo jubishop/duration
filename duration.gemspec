@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'duration'
-  spec.version       = '1.5'
+  spec.version       = '1.6'
   spec.summary       = %q(Ruby class representing a duration in time.)
   spec.authors       = ['Justin Bishop']
   spec.email         = ['jubishop@gmail.com']
@@ -12,7 +12,8 @@ Gem::Specification.new do |spec|
   spec.executables   = []
   spec.metadata      = {
     'source_code_uri' => 'https://github.com/jubishop/duration',
-    'steep_types' => 'sig'
+    'steep_types' => 'sig',
+    'rubygems_mfa_required' => 'true'
   }
   spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
   spec.add_runtime_dependency('core')

@@ -28,6 +28,7 @@ class Duration
        | (Duration other) -> Rational
   def %: (Duration other) -> Duration
 
+  def format_parts: (?precision: Integer) -> Array[String]
   def format: (?precision: Integer) -> String
 
   alias to_s format
