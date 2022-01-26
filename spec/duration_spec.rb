@@ -41,6 +41,10 @@ RSpec.describe(Duration) {
     # rubocop:enable Style/DateTime
   }
 
+  it('converts durations to absolute durations') {
+    expect((30.minutes - 90.minutes).abs).to(eq(60.minutes))
+  }
+
   it('pretty prints a duration') {
     expect(1218234.seconds.to_s).to(
         eq('14 days, 2 hours, 23 minutes and 54 seconds'))

@@ -67,6 +67,12 @@ DateTime.new(2001,2,3) + 2.days # 02/05/2001
 Time.new(1993, 2, 24) - 7.days # 02/17/1993
 ```
 
+### Converting any duration to absolute duration
+
+```ruby
+(30.minutes - 90.minutes).abs # 60.minutes
+```
+
 ### Pretty Printing
 
 ```ruby

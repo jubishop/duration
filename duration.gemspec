@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'duration'
-  spec.version       = '1.6'
+  spec.version       = '1.7'
   spec.summary       = %q(Ruby class representing a duration in time.)
   spec.authors       = ['Justin Bishop']
   spec.email         = ['jubishop@gmail.com']

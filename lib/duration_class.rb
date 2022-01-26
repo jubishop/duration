@@ -72,6 +72,10 @@ class Duration
     return Duration.new(ms % other.ms, units: MILLISECONDS)
   end
 
+  def abs
+    return Duration.new(ms.abs, units: MILLISECONDS)
+  end
+
   def format_parts(precision: SECONDS)
     remaining = milliseconds
     parts = TIME_NAMES.filter_map { |amount, name|
